@@ -1,0 +1,50 @@
+[user]
+  name = Thorsten Hoeger
+  email = thorsten.hoeger@taimos.de
+[core]
+  autocrlf = false
+[credential]
+  helper = /usr/bin/gp credential-helper
+[color]
+  ui = true
+  diff = true
+  grep = true
+  branch = true
+  showbranch = true
+  status = true
+
+[color "diff"]
+  plain = normal dim
+  meta = yellow dim
+  frag = blue bold
+  old = red
+  new = green
+  whitespace = red reverse
+
+[color "status"]
+  header = normal dim
+  added = yellow
+  untracked = magenta
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = red
+[push]
+  default = current
+[pull]
+  rebase = true
+[branch "main"]
+  rebase = true
+  mergeoptions = --no-ff
+[branch "master"]
+  rebase = true
+  mergeoptions = --no-ff
+[branch]
+  autosetuprebase = always
+[alias]
+  wipe = reset --hard HEAD
+[github]
+  user = hoegertn
+[init]
+  defaultBranch = main
