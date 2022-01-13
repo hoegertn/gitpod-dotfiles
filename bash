@@ -1,8 +1,4 @@
 
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 #source /usr/share/git-core/contrib/completion/git-prompt.sh
 alias awsid='aws sts get-caller-identity && aws iam list-account-aliases --query "AccountAliases[]" --output text'
 alias ec2instances='aws ec2 describe-instances --query "Reservations[].Instances[?State.Name=='\''running'\''].{Internal:PrivateDnsName,External:PublicDnsName,Name:Tags[?Key=='\''Name'\''].Value,Id:InstanceId}|[].{Id:Id,Internal:Internal,External:External,Name:Name[0]}" --output table'
