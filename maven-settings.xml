@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd"
+    xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <servers>
+        <server>
+            <id>sonatype-nexus-snapshots</id>
+            <username>hoegertn</username>
+            <password>${env.SONATYPE_PWD}</password>
+        </server>
+        <server>
+            <id>sonatype-nexus-staging</id>
+            <username>hoegertn</username>
+            <password>${env.SONATYPE_PWD}</password>
+        </server>
+        <server>
+            <id>github</id>
+            <privateKey>${env.MAVEN_GITHUB_KEY}</privateKey>
+        </server>
+        <server>
+            <id>maven.jenkins-ci.org</id>
+            <username>hoegertn</username>
+            <password>${env.MAVEN_JENKINS_PWD}</password>
+        </server>
+    </servers>
+    <profiles>
+        <profile>
+            <id>taimos_release</id>
+            <properties>
+                <gpg.keyname>9B2FBCF4</gpg.keyname>
+            </properties>
+        </profile>
+        <profile>
+            <id>hoegernet_release</id>
+            <properties>
+                <gpg.keyname>FB4FC17E</gpg.keyname>
+            </properties>
+        </profile>
+    </profiles>
+    <pluginGroups>
+        <pluginGroup>com.versioneye</pluginGroup>
+    </pluginGroups>
+</settings>
