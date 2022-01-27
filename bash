@@ -29,6 +29,28 @@ _awsregion() {
 
 complete -F _awsregion awsregion
 
+awsprofile() {
+	if [[ -z $1 ]]; then
+		echo "missing profile name"
+	else
+		export AWS_DEFAULT_PROFILE=$1
+		export AWS_PROFILE=$1
+	fi
+}
+
+_awsprofile_list() {
+	cat ~/.aws/config | grep "\[profile" | sed "s/\[profile \(.*\)\]/\1/"
+}
+
+_awsprofile() {
+	if [ $COMP_CWORD -eq 1 ]; then
+		local cur=${COMP_WORDS[COMP_CWORD]}
+		COMPREPLY=( $(compgen -W "$(_awsprofile_list)" -- $cur) )
+	fi
+}
+
+complete -F _awsprofile awsprofile
+
 #GIT aliases
 alias gis='git status'
 alias gic='git commit'
