@@ -120,6 +120,8 @@ alias psa='ps axu'
 alias rm='rm -i'
 alias myip='curl http://icanhazip.com'
 alias npmclean='rm -rf node_modules/ package-lock.json yarn.lock'
+alias mvntest='mvn clean verify'
+alias gpgkey='GPG_TTY=$(tty) && export GPG_TTY && gpg --import --pinentry-mode loopback <(echo $GPG_KEY)'
 
 search () {
   if [[ -z $1 ]]; then
