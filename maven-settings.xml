@@ -6,12 +6,12 @@
     <servers>
         <server>
             <id>sonatype-nexus-snapshots</id>
-            <username>hoegertn</username>
+            <username>${env.SONATYPE_USER}</username>
             <password>${env.SONATYPE_PWD}</password>
         </server>
         <server>
             <id>sonatype-nexus-staging</id>
-            <username>hoegertn</username>
+            <username>${env.SONATYPE_USER}</username>
             <password>${env.SONATYPE_PWD}</password>
         </server>
         <server>
